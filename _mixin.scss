@@ -1,0 +1,16 @@
+@mixin flexible($direction, $corte, $just, $align) {
+  display: flex;
+  flex-flow: $direction $corte;
+  justify-content: $just;
+  align-items: $align;
+}
+@mixin grid($colum, $spacio) {
+  display: grid;
+  grid-template-columns: repeat($colum, 1fr);
+  gap: $spacio;
+}
+@mixin mv($medida: 480px) {
+  @media screen and (min-width: $medida) {
+    @content;
+  }
+}
